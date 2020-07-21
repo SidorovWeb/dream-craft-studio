@@ -1,0 +1,21 @@
+.breadcrumbs
+	ul
+		if title == 'article'
+			li
+				a(href='#') Главная
+			li
+				a(href='#') Наши услуги
+			li
+				a(href='#') Разработка игр на Android
+		else if title == 'about'
+			li
+				a(href='#') Главная
+			li
+				a(href='#') Компания
+		else
+			li
+				a(href='#') Главная
+			li
+				a(href='#') Наши услуги
+			//- li.active
+			//- 	a(href='#') Наши услуги

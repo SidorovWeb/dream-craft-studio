@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block variables
+	- const title = "article";
+	- const name = 'article-page'
+
+block content
+	section.section-breadcrumbs
+		.container
+			include ../../blocks/components/breadcrumb/breadcrumb.pug
+	.article-page-wrapper
+		.container
+			.article-page-inner#wrapper-sticky
+				include ../../blocks/modules/article/article.pug
+				include ../../blocks/modules/sidebar/sidebar.pug
+	include ../../blocks/modules/s-form/s-form.pug
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

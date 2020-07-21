@@ -1,0 +1,19 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "Главная"
+	- const name = "main-page"
+
+block content
+	include ../blocks/modules/hero/hero.pug
+	include ../blocks/modules/cards-platform/cards-platform.pug
+	include ../blocks/modules/range-work/range-work.pug
+	include ../blocks/modules/answer/answer.pug
+	include ../blocks/modules/technology/technology.pug
+	include ../blocks/modules/typical-solutions/typical-solutions.pug
+	include ../blocks/modules/s-form/s-form.pug
+	include ../blocks/modules/reliable/reliable.pug
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

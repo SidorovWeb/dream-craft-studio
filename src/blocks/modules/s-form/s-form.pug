@@ -1,0 +1,54 @@
+section.section-s-form#s-form
+	.container
+		.s-form
+			.s-form__inner
+				h2.s-form__title Ответьте на несколько вопросов
+				p.s-form__subtitle Мы проанализируем заявку в течении для и составим наиболее выгодное для вас предложение
+				form(id="contact").form
+					.form__block
+						label(for='name') Здравствуйте! Меня зовут
+						input#name(type='text', placeholder='введите имя и фамилию')
+					.form__block
+						label Я хочу заказать разработку игры на
+						.custom-select-wrapper#platform
+							.custom-select
+								.custom-select__trigger
+									span Android
+									.arrow
+								.custom-options
+									span.custom-option.selected(data-value='android') Android
+									span.custom-option(data-value='windows') Windows
+									span.custom-option(data-value='linux') Linux
+					.form__block.form__block--big
+						label(for='haveMoney') Рассчитываю на
+						input#haveMoney(type='text', placeholder='впишите бюджет в рублях или долларах США')
+					.form__block
+						label(for='phone') Свяжитесь со мной по телефону,
+						input#phone.imask(type='tel', placeholder="+7 (900) 000-00-00")
+					.form__block
+						label(for='email') электронной почте,
+						input#email(type='email', placeholder='kxaritonovvw@gmail.com')
+					.form__block
+						label или выберите мессенджер
+						.custom-select-wrapper#messenger
+							.custom-select
+								.custom-select__trigger
+									span Telegram
+									.arrow
+								.custom-options
+									span.custom-option.selected(data-value='telegram', data-massage='Введите логин от Telegram', data-input-placeholder="@kxaritonovvw") Telegram
+									span.custom-option(data-value='vkontakte', data-massage='Введите ссылку на профиль в VK', data-input-placeholder="kxaritonovvwwww") ВКонтакте
+									span.custom-option(data-value='whatsapp', data-massage='Введите телефон в WhatsApp', data-input-placeholder="+7 (900) 000-00-00") WhatsApp
+									span.custom-option(data-value='viber', data-massage='Введите телефон в Viber', data-input-placeholder="+7 (900) 000-00-00") Viber
+					.form__block.form__block--big
+						label(for='messenger' class="messenger-text") Введите логин от Telegram
+						input#messenger(type='text',class="messenger-input-placeholder" placeholder="@kxaritonovvw")
+					.form__block-textarea
+						label(for='message') Распишите вашу идею для игры:
+						textarea#message( placeholder='Введите дополнительную информацию, распишите идею игры, приложите файлы с ТЗ, если есть')
+						label(for='upload').label
+							+icon('screpa')
+							input(type="file" name="upload" id="upload" class="upload-box")
+					.form__footer
+						button.btn.btn--primary.btn--large.form__btn(type='submit') Заказать игру
+						a(href="#").form__link Нажимая кнопку «Заказать игру» вы соглашаетесь с <span>Политикой обработки персональных данных</span>

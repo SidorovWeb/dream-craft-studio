@@ -1,0 +1,79 @@
+.team {
+  margin-bottom: 120px;
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__card {
+    @include coll();
+    flex: 0 1 33.33333333%;
+    max-width: 33.33333333%;
+
+    @media screen and (max-width: 768px) {
+      flex: 0 1 50%;
+      max-width: 50%;
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 567px) {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      transform: scale(1);
+      transition: var(--transition);
+    }
+  }
+
+  &__card-header {
+    overflow: hidden;
+  }
+
+  &__cart-inner {
+    background-color: #f8f9fc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__card-footer {
+    padding: 32px 40px;
+    @media screen and (max-width: 992px) {
+      padding: 22px 20px;
+    }
+  }
+
+  &__card-title {
+    font-size: 28px;
+    line-height: 32px;
+    font-family: var(--p-bold);
+    color: var(--dark);
+    margin-bottom: 4px;
+    display: block;
+
+    @media screen and (max-width: 992px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  &__card-prof {
+    margin: 0;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--grey4);
+  }
+}

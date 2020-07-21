@@ -1,0 +1,81 @@
+.btn {
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  vertical-align: middle;
+  transition: var(--transition);
+  border-radius: 0;
+  font: inherit;
+  font-size: inherit;
+  outline: none;
+  text-decoration: none;
+  transition-property: color, background-color, border-color;
+  white-space: nowrap;
+  transform: translateY(0);
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--default {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 24px;
+    background-color: transparent;
+    color: var(--dark);
+    border-radius: 8px;
+    border: 1px solid var(--border-btn-default);
+
+    &:hover {
+      border: 1px solid #ebecef;
+    }
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--dark);
+    font-size: 20px;
+    line-height: 32px;
+    padding: 0 48px;
+    height: 72px;
+    line-height: 72px;
+    box-shadow: 0px 16px 40px rgba(155, 226, 249, 0.32);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+      box-shadow: 0px 16px 40px rgba(161, 232, 255, 0.24);
+    }
+
+    &:active {
+      background-color: var(--color-primary-active);
+      box-shadow: none;
+    }
+  }
+
+  &--large {
+    height: 80px;
+    line-height: 80px;
+  }
+  &--midle {
+    padding: 0 32px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

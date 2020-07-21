@@ -1,0 +1,40 @@
+:root {
+  --font-size: 16px;
+  --container-width: 1220px;
+  --color-primary: #9be2f9;
+  --color-primary2: #3fc7f3;
+  --color-primary-hover: #a2e8ff;
+  --color-primary-active: #5ebfde;
+  --main-bg: #f3f3f3;
+  --white: #ffffff;
+  --dark: #32353d;
+  --dark2: #292c32;
+  --dark3: #32353d;
+  --grey: #7e8495;
+  --grey2: #656b7b;
+  --grey3: #abafba;
+  --grey4: #9297a5;
+  --border-btn-default: #f4f4f6;
+  --separator-color: #ebecef;
+  --placeholder-color: #575d6b;
+
+  // Other
+  --transition: 0.3s ease;
+
+  // Fonts
+  --p-reg: 'CircleRegular', sans-serif;
+  --p-bold: 'CirceBold', sans-serif;
+  --p-extraBold: 'CircleExtraBold', sans-serif;
+  --p-light: 'CircleLight', sans-serif;
+
+  --widtnSideBar: 280px;
+  --header-height: 120px;
+
+  @media screen and (max-width: 992px) {
+    --header-height: 66px;
+  }
+
+  @media screen and (max-width: 480px) {
+    --header-height: 56px;
+  }
+}

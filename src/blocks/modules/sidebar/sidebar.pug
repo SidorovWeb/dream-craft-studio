@@ -1,0 +1,26 @@
+aside.sidebar#sidebar
+	.sidebar__sticky.sticky#sticky
+		nav.sidenav-nav
+			.sidenav-nav__title Наши услуги
+			ul.sidenav-nav__list
+				li.sidenav-nav__item.active
+					a(href="#").sidenav-nav__link
+						+icon('and', 'sidenav-nav__icon')
+						span.sidenav-nav__item-title Разработка игр на Android
+				li.sidenav-nav__item
+					a(href="#").sidenav-nav__link
+						+icon('un', 'sidenav-nav__icon')
+						span.sidenav-nav__item-title Разработка игр на Unity
+				li.sidenav-nav__item
+					a(href="#").sidenav-nav__link
+						+icon('pacMan', 'sidenav-nav__icon')
+						span.sidenav-nav__item-title Перевод игры на заказ
+		.widget-form
+			span.widget-form__title У вас есть вопросы?
+			p.widget-form__subtitle Оставьте номер телефона и мы проконсультируем вас по любому вопросу:
+			form#fast-send.fast-send.widget-form__fast-send
+				.fast-send__block
+					label(for="fast-send-phone")
+						input(id="fast-send-phone" type='tel', required='required' placeholder="+7 (900) 000-00-00").imask
+						+icon('phone', 'fast-send__icon')
+					button.btn.btn--primary.btn--midle.fast-send__btn(type='submit') Отправить

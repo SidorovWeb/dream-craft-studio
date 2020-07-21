@@ -1,0 +1,35 @@
+section.section-contacts
+	.container
+		.contacts
+			.contacts__inner
+				.contacts__header
+					h2.contacts__title Контакты
+					p.contacts__subtitle Компания «DreamCraft» начала работать 2008 году. Более 850 выполненных проектов.
+				.contacts__content
+					ul.contacts__list
+						li.contacts__item
+							span.contacts__item-title Бесплатный звонок по России
+							a(href="tel:+7499112-38-22").contacts__link +7 499 112-38-22
+						li.contacts__item
+							span.contacts__item-title Электронная почта
+							a(href="mailto:info@seobro.ru").contacts__link info@seobro.ru
+						li.contacts__item
+							span.contacts__item-title Адрес студии
+							.contacts__link 115409 г.Москва, ш. Каширское, д. 66, <br> корп. 2, офис 52
+					.contacts-social.contacts__social
+						ul.contacts-social__list
+							li.contacts-social__item
+								a(href="#").contacts-social__link
+									span.contacts-social__icon-wrap
+										+icon('telegram', 'contacts-social__icon contacts-social__icon--telegram')
+									span.contacts-social__title Telegram
+									+icon('link', 'contacts-social__icon-link')
+							li.contacts-social__item
+								a(href="#").contacts-social__link
+									span.contacts-social__icon-wrap
+										+icon('skype', 'contacts-social__icon')
+									span.contacts-social__title Skype
+									+icon('link', 'contacts-social__icon-link')
+				.contacts__footer
+					button.btn.btn--primary.contacts__btn.btn-popup-request Напишите нам!
+	#map

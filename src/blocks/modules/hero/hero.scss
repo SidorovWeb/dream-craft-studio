@@ -1,0 +1,364 @@
+.section-hero {
+  .container {
+    position: relative;
+  }
+}
+
+.hero {
+  padding-top: 100px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+
+  @media screen and (max-width: 1280px) {
+    padding-top: 70px;
+  }
+
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    height: calc(100vh - 70px);
+  }
+
+  &__info-block-top {
+    @media screen and (max-width: 480px) and (orientation: portrait) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    max-width: 55vw;
+    margin: 0 auto;
+    font-family: var(--p-extraBold);
+    line-height: 80px;
+    color: var(--dark);
+    @include fluidFontSize(50px, 80px, 767.98px, 1920px);
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 1280px) {
+      line-height: 60px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      max-width: 65vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      line-height: 50px;
+      max-width: 75vw;
+    }
+
+    @media screen and (max-width: 667px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 30px;
+      line-height: 38px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 38px;
+    color: var(--grey);
+    margin: 0 auto;
+    margin-bottom: 56px;
+
+    @media screen and (max-width: 667px) {
+      // margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 20px;
+      line-height: 28px;
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 667px) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__platform-blok-text {
+    max-width: 488px;
+    text-align: left;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__platform-blok-title {
+    font-family: var(--p-extraBold);
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--dark);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &__platform-blok-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--grey);
+  }
+}
+
+.hero__platform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 80px;
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    position: relative;
+    & > *:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -40px;
+      content: '';
+      width: 1px;
+      height: 56px;
+      background-color: var(--separator-color);
+    }
+  }
+
+  &-link {
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--dark);
+
+    &:hover {
+      .icon-unity {
+        fill: #3f4b50;
+      }
+
+      .icon-android {
+        fill: #3ddc84;
+      }
+    }
+  }
+  &-text {
+    white-space: nowrap;
+  }
+  .icon-unity {
+    width: 40px;
+    height: 40px;
+    fill: #32353d;
+    transition: var(--transition);
+  }
+  .icon-android {
+    width: 25.41px;
+    height: 30px;
+    margin-bottom: 8px;
+    fill: #32353d;
+    transition: var(--transition);
+  }
+}
+
+.linux-hero,
+.android-hero,
+.windows-hero,
+.unreal-hero,
+.ios-hero,
+.html-hero,
+.unity-hero {
+  z-index: -1;
+  position: absolute !important;
+  fill: var(--black);
+  opacity: 0.1;
+  transition: all 1s ease;
+  height: 80px;
+  width: 80px;
+
+  &.active {
+    animation-name: show;
+    animation-duration: 1s;
+  }
+
+  @media screen and (max-width: 992px) {
+    height: 60px;
+    width: 60px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.1;
+    fill: var(--black);
+  }
+}
+@keyframes hide {
+  100% {
+    opacity: 0.1;
+    fill: var(--black);
+  }
+}
+
+.html-hero {
+  top: 1% !important;
+  left: 36% !important;
+
+  @media screen and (max-width: 992px) {
+    top: 7% !important;
+  }
+
+  @media screen and (max-width: 1380px) {
+    top: 3% !important;
+  }
+
+  @media screen and (max-width: 480px) {
+    top: 10% !important;
+    left: 46% !important;
+  }
+
+  &.active {
+    fill: #e34f26;
+    opacity: 0.8;
+  }
+}
+.unity-hero {
+  top: 20% !important;
+  left: 10% !important;
+
+  &.active {
+    fill: #3f4b50;
+    opacity: 0.8;
+  }
+}
+.android-hero {
+  top: 49% !important;
+  left: -6% !important;
+
+  @media screen and (max-width: 1380px) {
+    top: 49% !important;
+    left: 2% !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    left: 5% !important;
+  }
+
+  right: -5.5% !important;
+
+  &.active {
+    fill: #3ddc84;
+    opacity: 0.8;
+  }
+}
+.linux-hero {
+  top: 81% !important;
+  left: 15% !important;
+
+  @media screen and (max-width: 1380px) {
+    top: 70% !important;
+    left: 10% !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    left: 15% !important;
+  }
+
+  @media screen and (max-width: 480px) {
+    top: 90% !important;
+  }
+
+  &.active {
+    fill: #fcc624;
+    opacity: 0.8;
+  }
+}
+.windows-hero {
+  top: 80% !important;
+  right: 6% !important;
+  left: auto !important;
+
+  @media screen and (max-width: 480px) {
+    top: 85% !important;
+    right: 10% !important;
+  }
+
+  &.active {
+    fill: #0078d6;
+    opacity: 0.8;
+  }
+}
+.ios-hero {
+  top: 46.4% !important;
+  right: -5.5% !important;
+  left: auto !important;
+
+  @media screen and (max-width: 1380px) {
+    max-width: 621px;
+    right: 2% !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    top: 60% !important;
+    right: 5.5% !important;
+  }
+
+  &.active {
+    fill: #000000;
+    opacity: 0.8;
+  }
+}
+.unreal-hero {
+  top: 9% !important;
+  right: 7.7% !important;
+  left: auto !important;
+
+  @media screen and (max-width: 480px) {
+    top: 25% !important;
+    right: 7% !important;
+  }
+
+  &.active {
+    fill: #313131;
+    opacity: 0.8;
+  }
+}
+
+.block-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}

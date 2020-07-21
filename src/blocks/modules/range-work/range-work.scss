@@ -1,0 +1,138 @@
+.section-range-work {
+  padding: 120px 0 160px 0;
+  margin: 0 40px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  overflow: hidden;
+  background: var(--dark2);
+  color: var(--white);
+
+  @media screen and (max-width: 1280px) {
+    padding: 80px 0 80px 0;
+    margin: 0 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0 40px 0;
+  }
+}
+
+.range-work {
+  &__title {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 524px;
+    line-height: 56px;
+    font-family: var(--p-extraBold);
+    @include fluidFontSize(40px, 48px, 767.98px, 1920px);
+    margin-bottom: 64px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 25px;
+      line-height: 38px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 80 0 80 0;
+    width: 30vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    line-height: 50px;
+  }
+}
+
+.card-work {
+  @extend .coll-3;
+
+  @include media-lg {
+    flex: 0 1 50%;
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 667px) {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  &__inner {
+    position: relative;
+    padding-top: 37px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    background: var(--dark3);
+    border-radius: 8px;
+    text-align: left;
+    min-height: 262px;
+    height: 100%;
+
+    @media screen and (max-width: 480px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &:hover {
+      .card-work__circle {
+        background: var(--color-primary);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: -11px;
+    top: -11px;
+    background: var(--dark);
+    border: 4px solid var(--dark2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    transition: var(--transition);
+  }
+
+  &__header {
+    margin-bottom: 28px;
+
+    @media screen and (max-width: 480px) {
+      margin-bottom: 20px;
+    }
+
+    svg {
+      height: 32px;
+      width: 35px;
+      fill: var(--white);
+    }
+  }
+
+  &__title {
+    font-family: var(--p-bold);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--white);
+    opacity: 1;
+    transition: var(--transition);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

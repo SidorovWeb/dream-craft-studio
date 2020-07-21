@@ -1,0 +1,33 @@
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title #{title}
+
+		meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+		meta(property='og:image', content='img/hero/mobile-img.jpg')
+		meta(name='theme-color', content='#9be2f9')
+		meta(name='msapplication-navbutton-color', content='#9be2f9')
+		meta(name='apple-mobile-web-app-status-bar-style', content='#9be2f9')
+		meta(name="theme-color" content="#9be2f9")
+		meta(name="apple-mobile-web-app-status-bar-style" content="9be2f9")
+		link(rel="icon" href="img/favicons/favicon.png" type="image/png")
+		link(rel="preload" as="font" href="fonts/Circe-Regular.woff2" type="font/woff2" crossorigin)
+		link(rel="preload" as="font" href="fonts/Circe-Bold.woff2" type="font/woff2" crossorigin)
+		link(rel="preload" as="font" href="fonts/Circe-ExtraBold.woff2" type="font/woff2" crossorigin)
+		link(rel="preload" as="font" href="fonts/Circe-Light.woff2" type="font/woff2" crossorigin)
+		link(rel="stylesheet" href="styles/main.css")
+
+	body(class=name)
+		.wrapper
+			header.header
+				include  ../../blocks/modules/header/header.pug
+			main.content
+				block content
+			footer.footer
+				include  ../../blocks/modules/footer/footer.pug
+		include  ../../blocks/components/popup/popup.pug
+		block scripts

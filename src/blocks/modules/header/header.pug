@@ -1,0 +1,21 @@
+include ../../../views/helpers/mixins.pug
+
+.container
+	.header__inner
+		.logo.header__logo
+			a(href="#").logo__link
+				+icon('logo')
+		nav.nav.header__nav
+			ul.nav__list
+				li.nav__item
+					a(href="#").nav__link Наши услуги
+				li.nav__item
+					a(href="#").nav__link Прайс-лист
+				li.nav__item
+					a(href="#").nav__link Компания
+				li.nav__item
+					a(href="#").nav__link Контакты
+		.header__block-left
+			.call
+				button.btn.btn--default.header__btn-call.btn-popup-call Заказать звонок
+			include ../../components/hamburger/hamburger.pug

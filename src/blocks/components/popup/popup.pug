@@ -1,0 +1,45 @@
+.popup-wrapper(data-modal)
+	.popup(data-call)
+		.popup__header
+			span.popup__title Заказать звонок
+			p.popup__subtitle Оставьте свои контактные данные, с вами свяжутся в течении 40 минут
+			button.btn.popup__icon-close-wrapper.popup__close
+				+icon('close', 'popup__icon-close')
+		.popup__content
+			.form-popup.popup__form-popup
+				form(id="form-popup-call")
+					.form-popup__block
+						label(for='popup-name-call')
+							input#popup-name-call(type='text', placeholder='Имя')
+					.form-popup__block
+						label(for='popup-phone-call')
+							input#popup-phone-call.imask(type='tel',  placeholder="Номер телефона")
+					.form-popup__block-btn
+						button.btn.btn--primary.btn--midle.form-popup__btn(type='submit') Отправить
+			.popup-passed-info
+				span.popup-passed-info__title Мы скоро перезвоним :)
+	.popup(data-request)
+		.popup__header
+			span.popup__title Оставить заявку
+			p.popup__subtitle Опишите вашу задачу и оставьте контактные данные, мы с вами свяжемся в течении рабочего дня
+			button.btn.popup__icon-close-wrapper.popup__close
+				+icon('close', 'popup__icon-close')
+		.popup__content
+			.form-popup.popup__form-popup
+				form(id="form-popup-request")
+					.form-popup__block
+						label(for='popup-name-request')
+							input#popup-name-request(type='text', placeholder='Имя')
+					.form-popup__block
+						label(for='popup-phone-request')
+							input#popup-phone-request.imask(type='tel',  placeholder="Номер телефона")
+					.form-popup__block
+						label(for='popup-email')
+							input#popup-email(type='email', placeholder="Электронная почта")
+					.form__block-textarea
+						label(for='popup-message')
+							textarea#popup-message( placeholder='Краткое описание задачи')
+					.form-popup__block-btn
+						button.btn.btn--primary.btn--midle.form-popup__btn(type='submit') Отправить
+			.popup-passed-info
+				span.popup-passed-info__title Мы скоро перезвоним :)
