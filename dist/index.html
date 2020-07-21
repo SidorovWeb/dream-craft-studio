@@ -16,7 +16,7 @@
     <link rel="preload" as="font" href="fonts/Circe-Bold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/Circe-ExtraBold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/Circe-Light.woff2" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body class="main-page">
     <div class="wrapper">
@@ -376,12 +376,12 @@
               <div class="s-form__inner">
                 <h2 class="s-form__title">Ответьте на несколько вопросов</h2>
                 <p class="s-form__subtitle">Мы проанализируем заявку в течении для и составим наиболее выгодное для вас предложение</p>
-                <form class="form" id="contact">
+                <form class="form" id="contact" action="mail.php" method="post" name="Форма ответьте на несколько вопросов">
                   <div class="form__block">
                     <label for="name">Здравствуйте! Меня зовут</label>
-                    <input id="name" type="text" placeholder="введите имя и фамилию">
+                    <input id="name" type="text" placeholder="введите имя и фамилию" name="Имя">
                   </div>
-                  <div class="form__block">
+                  <div class="form__block form__block-development">
                     <label>Я хочу заказать разработку игры на</label>
                     <div class="custom-select-wrapper" id="platform">
                       <div class="custom-select">
@@ -391,20 +391,21 @@
                         <div class="custom-options"><span class="custom-option selected" data-value="android">Android</span><span class="custom-option" data-value="windows">Windows</span><span class="custom-option" data-value="linux">Linux</span></div>
                       </div>
                     </div>
+                    <input class="input-hidden" type="hidden" name="Разработку игры на" value="android">
                   </div>
                   <div class="form__block form__block--big">
                     <label for="haveMoney">Рассчитываю на</label>
-                    <input id="haveMoney" type="text" placeholder="впишите бюджет в рублях или долларах США">
+                    <input id="haveMoney" type="text" placeholder="впишите бюджет в рублях или долларах США" name="Рассчитываю на">
                   </div>
                   <div class="form__block">
                     <label for="phone">Свяжитесь со мной по телефону,</label>
-                    <input class="imask" id="phone" type="tel" placeholder="+7 (900) 000-00-00">
+                    <input class="imask" id="phone" type="tel" placeholder="+7 (900) 000-00-00" name="Телефон">
                   </div>
                   <div class="form__block">
                     <label for="email">электронной почте,</label>
-                    <input id="email" type="email" placeholder="kxaritonovvw@gmail.com">
+                    <input id="email" type="email" placeholder="kxaritonovvw@gmail.com" name="Почта">
                   </div>
-                  <div class="form__block">
+                  <div class="form__block form__block-messenger">
                     <label>или выберите мессенджер</label>
                     <div class="custom-select-wrapper" id="messenger">
                       <div class="custom-select">
@@ -414,14 +415,15 @@
                         <div class="custom-options"><span class="custom-option selected" data-value="telegram" data-massage="Введите логин от Telegram" data-input-placeholder="@kxaritonovvw">Telegram</span><span class="custom-option" data-value="vkontakte" data-massage="Введите ссылку на профиль в VK" data-input-placeholder="kxaritonovvwwww">ВКонтакте</span><span class="custom-option" data-value="whatsapp" data-massage="Введите телефон в WhatsApp" data-input-placeholder="+7 (900) 000-00-00">WhatsApp</span><span class="custom-option" data-value="viber" data-massage="Введите телефон в Viber" data-input-placeholder="+7 (900) 000-00-00">Viber</span></div>
                       </div>
                     </div>
+                    <input class="input-hidden" type="hidden" name="Мессенджер" value="telegram">
                   </div>
                   <div class="form__block form__block--big">
                     <label class="messenger-text" for="messenger">Введите логин от Telegram</label>
-                    <input class="messenger-input-placeholder" id="messenger" type="text" placeholder="@kxaritonovvw">
+                    <input class="messenger-input-placeholder" id="messenger" type="text" placeholder="@kxaritonovvw" name="мессенджер">
                   </div>
                   <div class="form__block-textarea">
                     <label for="message">Распишите вашу идею для игры:</label>
-                    <textarea id="message" placeholder="Введите дополнительную информацию, распишите идею игры, приложите файлы с ТЗ, если есть"></textarea>
+                    <textarea id="message" placeholder="Введите дополнительную информацию, распишите идею игры, приложите файлы с ТЗ, если есть" name="Дополнительная информация"></textarea>
                     <label class="label" for="upload">
                               <svg class="svg-sprite-icon icon-screpa">
                                 <use xlink:href="img/sprites/sprite.svg#screpa"></use>
@@ -537,15 +539,15 @@
         </div>
         <div class="popup__content">
           <div class="form-popup popup__form-popup">
-            <form id="form-popup-call">
+            <form id="form-popup-call" action="mail.php" method="post" name="Форма заказать звонок">
               <div class="form-popup__block">
                 <label for="popup-name-call">
-                  <input id="popup-name-call" type="text" placeholder="Имя">
+                  <input id="popup-name-call" type="text" placeholder="Имя" name="Имя">
                 </label>
               </div>
               <div class="form-popup__block">
                 <label for="popup-phone-call">
-                  <input class="imask" id="popup-phone-call" type="tel" placeholder="Номер телефона">
+                  <input class="imask" id="popup-phone-call" type="tel" placeholder="Номер телефона" name="Телефон">
                 </label>
               </div>
               <div class="form-popup__block-btn">
@@ -567,25 +569,25 @@
         </div>
         <div class="popup__content">
           <div class="form-popup popup__form-popup">
-            <form id="form-popup-request">
+            <form id="form-popup-request" action="mail.php" method="post" name="Форма оставить заявку">
               <div class="form-popup__block">
                 <label for="popup-name-request">
-                  <input id="popup-name-request" type="text" placeholder="Имя">
+                  <input id="popup-name-request" type="text" placeholder="Имя" name="Имя">
                 </label>
               </div>
               <div class="form-popup__block">
                 <label for="popup-phone-request">
-                  <input class="imask" id="popup-phone-request" type="tel" placeholder="Номер телефона">
+                  <input class="imask" id="popup-phone-request" type="tel" placeholder="Номер телефона" name="Телефон">
                 </label>
               </div>
               <div class="form-popup__block">
                 <label for="popup-email">
-                  <input id="popup-email" type="email" placeholder="Электронная почта">
+                  <input id="popup-email" type="email" placeholder="Электронная почта" name="Почта">
                 </label>
               </div>
               <div class="form__block-textarea">
                 <label for="popup-message">
-                  <textarea id="popup-message" placeholder="Краткое описание задачи"></textarea>
+                  <textarea id="popup-message" placeholder="Краткое описание задачи" name="Описание"></textarea>
                 </label>
               </div>
               <div class="form-popup__block-btn">
@@ -597,7 +599,7 @@
         </div>
       </div>
     </div>
-    <script src="js/main.js"></script>
-    <script src="js/vendor.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/vendor.min.js"></script>
   </body>
 </html>

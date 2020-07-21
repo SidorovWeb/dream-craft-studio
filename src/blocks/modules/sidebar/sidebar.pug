@@ -18,9 +18,9 @@ aside.sidebar#sidebar
 		.widget-form
 			span.widget-form__title У вас есть вопросы?
 			p.widget-form__subtitle Оставьте номер телефона и мы проконсультируем вас по любому вопросу:
-			form#fast-send.fast-send.widget-form__fast-send
+			form#fast-send.fast-send.widget-form__fast-send(action="mail.php" method="post" name="Форма из сайдбара")
 				.fast-send__block
 					label(for="fast-send-phone")
-						input(id="fast-send-phone" type='tel', required='required' placeholder="+7 (900) 000-00-00").imask
+						input(id="fast-send-phone" type='tel', placeholder="+7 (900) 000-00-00", name="Имя").imask
 						+icon('phone', 'fast-send__icon')
 					button.btn.btn--primary.btn--midle.fast-send__btn(type='submit') Отправить

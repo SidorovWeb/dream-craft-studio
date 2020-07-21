@@ -16,7 +16,7 @@ import stickSidebarEI11 from './modules/stickySidebarEI11'
 import swiperSlider from './modules/sliderSwiper'
 import yMap from './modules/yandexMap'
 import stuckyHeader from './modules/stuckyHeader'
-import validateForm from './modules/formMainValid'
+import formsValidate from './modules/formsValidate'
 
 window.addEventListener('DOMContentLoaded', () => {
   // eslint-disable-next-line no-extra-semi
@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
   swiperSlider()
   iMask()
 
-  validateForm()
+  formsValidate()
 })
 
 window.onload = function () {

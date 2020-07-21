@@ -91,11 +91,17 @@ const modals = () => {
           e.preventDefault()
 
           if (validateForm(input)) {
-            modal.classList.add('is-passed')
             // alert('Отправка')
             // =================
             // Сюда добавить скритп для отправки на сервер
             // =================
+
+            const formData = new FormData(f)
+            const request = new XMLHttpRequest()
+            request.open('POST', f.action)
+            request.send(formData)
+
+            modal.classList.add('is-passed')
             setTimeout(() => {
               modal.classList.remove('modal-open')
               document.body.classList.remove('modal-open')
@@ -106,6 +112,7 @@ const modals = () => {
             }, 2000)
           } else {
             input.classList.add('invalid')
+            input.focus()
           }
         })
       })

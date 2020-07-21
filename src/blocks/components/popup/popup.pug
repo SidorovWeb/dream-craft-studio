@@ -7,13 +7,13 @@
 				+icon('close', 'popup__icon-close')
 		.popup__content
 			.form-popup.popup__form-popup
-				form(id="form-popup-call")
+				form(id="form-popup-call" action="mail.php" method="post" name="Форма заказать звонок")
 					.form-popup__block
 						label(for='popup-name-call')
-							input#popup-name-call(type='text', placeholder='Имя')
+							input#popup-name-call(type='text', placeholder='Имя', name="Имя")
 					.form-popup__block
 						label(for='popup-phone-call')
-							input#popup-phone-call.imask(type='tel',  placeholder="Номер телефона")
+							input#popup-phone-call.imask(type='tel', placeholder="Номер телефона", name="Телефон")
 					.form-popup__block-btn
 						button.btn.btn--primary.btn--midle.form-popup__btn(type='submit') Отправить
 			.popup-passed-info
@@ -26,19 +26,19 @@
 				+icon('close', 'popup__icon-close')
 		.popup__content
 			.form-popup.popup__form-popup
-				form(id="form-popup-request")
+				form(id="form-popup-request" action="mail.php" method="post" name="Форма оставить заявку")
 					.form-popup__block
 						label(for='popup-name-request')
-							input#popup-name-request(type='text', placeholder='Имя')
+							input#popup-name-request(type='text', placeholder='Имя', name="Имя")
 					.form-popup__block
 						label(for='popup-phone-request')
-							input#popup-phone-request.imask(type='tel',  placeholder="Номер телефона")
+							input#popup-phone-request.imask(type='tel',  placeholder="Номер телефона", name="Телефон")
 					.form-popup__block
 						label(for='popup-email')
-							input#popup-email(type='email', placeholder="Электронная почта")
+							input#popup-email(type='email', placeholder="Электронная почта", name="Почта")
 					.form__block-textarea
 						label(for='popup-message')
-							textarea#popup-message( placeholder='Краткое описание задачи')
+							textarea#popup-message( placeholder='Краткое описание задачи', name="Описание")
 					.form-popup__block-btn
 						button.btn.btn--primary.btn--midle.form-popup__btn(type='submit') Отправить
 			.popup-passed-info

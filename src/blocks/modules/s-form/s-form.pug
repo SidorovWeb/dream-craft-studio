@@ -4,11 +4,11 @@ section.section-s-form#s-form
 			.s-form__inner
 				h2.s-form__title Ответьте на несколько вопросов
 				p.s-form__subtitle Мы проанализируем заявку в течении для и составим наиболее выгодное для вас предложение
-				form(id="contact").form
+				form(id="contact" action="mail.php" method="post" name="Форма ответьте на несколько вопросов").form
 					.form__block
 						label(for='name') Здравствуйте! Меня зовут
-						input#name(type='text', placeholder='введите имя и фамилию')
-					.form__block
+						input#name(type='text', placeholder='введите имя и фамилию', name="Имя")
+					.form__block.form__block-development
 						label Я хочу заказать разработку игры на
 						.custom-select-wrapper#platform
 							.custom-select
@@ -19,16 +19,17 @@ section.section-s-form#s-form
 									span.custom-option.selected(data-value='android') Android
 									span.custom-option(data-value='windows') Windows
 									span.custom-option(data-value='linux') Linux
+						input(type="hidden", class="input-hidden" name="Разработку игры на", value="android")
 					.form__block.form__block--big
 						label(for='haveMoney') Рассчитываю на
-						input#haveMoney(type='text', placeholder='впишите бюджет в рублях или долларах США')
+						input#haveMoney(type='text', placeholder='впишите бюджет в рублях или долларах США', name="Рассчитываю на")
 					.form__block
 						label(for='phone') Свяжитесь со мной по телефону,
-						input#phone.imask(type='tel', placeholder="+7 (900) 000-00-00")
+						input#phone.imask(type='tel', placeholder="+7 (900) 000-00-00", name="Телефон")
 					.form__block
 						label(for='email') электронной почте,
-						input#email(type='email', placeholder='kxaritonovvw@gmail.com')
-					.form__block
+						input#email(type='email', placeholder='kxaritonovvw@gmail.com', name="Почта")
+					.form__block.form__block-messenger
 						label или выберите мессенджер
 						.custom-select-wrapper#messenger
 							.custom-select
@@ -40,12 +41,13 @@ section.section-s-form#s-form
 									span.custom-option(data-value='vkontakte', data-massage='Введите ссылку на профиль в VK', data-input-placeholder="kxaritonovvwwww") ВКонтакте
 									span.custom-option(data-value='whatsapp', data-massage='Введите телефон в WhatsApp', data-input-placeholder="+7 (900) 000-00-00") WhatsApp
 									span.custom-option(data-value='viber', data-massage='Введите телефон в Viber', data-input-placeholder="+7 (900) 000-00-00") Viber
+						input(type="hidden", class="input-hidden" name="Мессенджер", value="telegram")
 					.form__block.form__block--big
 						label(for='messenger' class="messenger-text") Введите логин от Telegram
-						input#messenger(type='text',class="messenger-input-placeholder" placeholder="@kxaritonovvw")
+						input#messenger(type='text',class="messenger-input-placeholder" placeholder="@kxaritonovvw", name="мессенджер")
 					.form__block-textarea
 						label(for='message') Распишите вашу идею для игры:
-						textarea#message( placeholder='Введите дополнительную информацию, распишите идею игры, приложите файлы с ТЗ, если есть')
+						textarea#message( placeholder='Введите дополнительную информацию, распишите идею игры, приложите файлы с ТЗ, если есть', name="Дополнительная информация")
 						label(for='upload').label
 							+icon('screpa')
 							input(type="file" name="upload" id="upload" class="upload-box")
