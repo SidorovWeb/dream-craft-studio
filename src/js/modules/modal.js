@@ -1,3 +1,5 @@
+import { headerRemoveStyle, calc_scroll } from './utils'
+
 const modals = () => {
   function bindModal(triggerSelector, modalSelector, closeSelector, clickCloseOverlay = true) {
     const trigger = document.querySelectorAll(triggerSelector),
@@ -49,6 +51,7 @@ const modals = () => {
         document.body.style.marginRight = ''
 
         headerRemoveStyle(header)
+
         forms.forEach((f) => {
           f.querySelector('input[type=tel]').classList.remove('invalid')
         })
@@ -91,11 +94,7 @@ const modals = () => {
           e.preventDefault()
 
           if (validateForm(input)) {
-            // alert('Отправка')
-            // =================
-            // Сюда добавить скритп для отправки на сервер
-            // =================
-
+            // formData
             const formData = new FormData(f)
             const request = new XMLHttpRequest()
             request.open('POST', f.action)
@@ -117,25 +116,6 @@ const modals = () => {
         })
       })
     }
-  }
-
-  function headerRemoveStyle(el) {
-    el.forEach((item) => {
-      item.style.paddingRight = ''
-    })
-  }
-
-  function calc_scroll() {
-    let div = document.createElement('div')
-    div.style.width = '50px'
-    div.style.height = '50px'
-    div.style.overflowY = 'scroll'
-    div.style.visibility = 'hidden'
-    document.body.appendChild(div)
-
-    let scrollWidth = div.offsetWidth - div.clientWidth // сама прокрутка
-    div.remove()
-    return scrollWidth
   }
 
   function validateForm(input) {

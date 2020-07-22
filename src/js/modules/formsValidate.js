@@ -1,3 +1,5 @@
+import { headerRemoveStyle, calc_scroll } from './utils'
+
 const formsValidate = () => {
   const modal = document.querySelector('.popup')
   const windows = document.querySelector('[data-modal]')
@@ -41,14 +43,12 @@ const formsValidate = () => {
         addClass(messenger)
         phone.focus()
       } else {
-        // alert('Отправка')
-        // =================
-        // Сюда добавить скритп для отправки на сервер
-        // =================
+        // formData
         const formData = new FormData(formContact)
         const request = new XMLHttpRequest()
         request.open('POST', formContact.action)
         request.send(formData)
+
         formContact.reset()
       }
     })
@@ -85,10 +85,7 @@ const formsValidate = () => {
 
           windows.classList.add('is-passed')
           modal.style.display = 'block'
-          // alert('Отправка')
-          // =================
-          // Сюда добавить скритп для отправки на сервер
-          // =================
+          // formData
           const formData = new FormData(form)
           const request = new XMLHttpRequest()
           request.open('POST', form.action)
@@ -136,25 +133,6 @@ function validateEmail(form_id, email) {
   } else {
     return true
   }
-}
-
-function calc_scroll() {
-  let div = document.createElement('div')
-  div.style.width = '50px'
-  div.style.height = '50px'
-  div.style.overflowY = 'scroll'
-  div.style.visibility = 'hidden'
-  document.body.appendChild(div)
-
-  let scrollWidth = div.offsetWidth - div.clientWidth // сама прокрутка
-  div.remove()
-  return scrollWidth
-}
-
-function headerRemoveStyle(el) {
-  el.forEach((item) => {
-    item.style.paddingRight = ''
-  })
 }
 
 export default formsValidate
