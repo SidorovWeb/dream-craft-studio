@@ -1,10 +1,14 @@
 const yMap = () => {
   if (document.querySelector('#map')) {
+    const map = document.querySelector('#map')
+    const coordinates = map.dataset.coordinates
+    const address = map.dataset.address
+
     ymaps.ready(function () {
       const myMap = new ymaps.Map(
           'map',
           {
-            center: [55.643414, 37.674508],
+            center: coordinates.split(','),
             zoom: 17,
             controls: [
               // 'zoomControl',
@@ -21,8 +25,8 @@ const yMap = () => {
         myPlacemark = new ymaps.Placemark(
           myMap.getCenter(),
           {
-            hintContent: '<strong>Москва, ш. Каширское, д. 66, корп. 2</strong>',
-            balloonContent: '<strong>Москва, ш. Каширское, д. 66, корп. 2</strong>',
+            hintContent: address,
+            balloonContent: address,
           },
           {
             preset: 'islands#redHomeIcon',
@@ -31,11 +35,6 @@ const yMap = () => {
 
       myMap.geoObjects.add(myPlacemark)
       myMap.behaviors.disable('scrollZoom')
-
-      // if (window.innerHeight <= 668) {
-      //   myMap.behaviors.disable('drag')
-      // }
-      // myMap.behaviors.disable('multiTouch')
     })
   }
 }

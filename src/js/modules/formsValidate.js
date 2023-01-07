@@ -8,50 +8,51 @@ const formsValidate = () => {
 
   function validateMainFormContact() {
     const formContact = document.querySelector('#contact')
+    if (formContact) {
+      const phone = document.querySelector('#phone')
+      const email = document.querySelector('#email')
+      const messenger = document.querySelector('.messenger-input-placeholder')
 
-    const phone = document.querySelector('#phone')
-    const email = document.querySelector('#email')
-    const messenger = document.querySelector('.messenger-input-placeholder')
+      formContact.addEventListener('input', () => {
+        if (phone.classList.contains('invalid')) {
+          if (validateTel(phone)) {
+            removeClass(email)
+            removeClass(phone)
+            removeClass(messenger)
+          }
+        }
 
-    formContact.addEventListener('input', () => {
-      if (phone.classList.contains('invalid')) {
-        if (validateTel(phone)) {
+        if (validateEmail('contact', 'email')) {
           removeClass(email)
           removeClass(phone)
           removeClass(messenger)
         }
-      }
 
-      if (validateEmail('contact', 'email')) {
-        removeClass(email)
-        removeClass(phone)
-        removeClass(messenger)
-      }
+        if (messenger.value !== '' && messenger.value.length >= 3) {
+          removeClass(email)
+          removeClass(phone)
+          removeClass(messenger)
+        }
+      })
 
-      if (messenger.value !== '' && messenger.value.length >= 3) {
-        removeClass(email)
-        removeClass(phone)
-        removeClass(messenger)
-      }
-    })
+      formContact.addEventListener('submit', (e) => {
+        e.preventDefault()
+        if (email.value === '' && phone.value === '' && messenger.value === '') {
+          addClass(email)
+          addClass(phone)
+          addClass(messenger)
+          phone.focus()
+        } else {
+          // formData
+          const formData = new FormData(formContact)
+          const request = new XMLHttpRequest()
+          request.open('POST', formContact.action)
+          request.send(formData)
 
-    formContact.addEventListener('submit', (e) => {
-      e.preventDefault()
-      if (email.value === '' && phone.value === '' && messenger.value === '') {
-        addClass(email)
-        addClass(phone)
-        addClass(messenger)
-        phone.focus()
-      } else {
-        // formData
-        const formData = new FormData(formContact)
-        const request = new XMLHttpRequest()
-        request.open('POST', formContact.action)
-        request.send(formData)
-
-        formContact.reset()
-      }
-    })
+          formContact.reset()
+        }
+      })
+    }
   }
 
   function validateFormFastSend() {

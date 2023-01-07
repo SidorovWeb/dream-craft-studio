@@ -13,31 +13,7 @@ const input = document.querySelector('.messenger-input-placeholder')
 
 for (const option of selectOptions) {
   option.addEventListener('click', function () {
-    const dataMassage = option.dataset.massage
-    const dataPlaceholder = option.dataset.inputPlaceholder
-    const dataTel = option.dataset.tel
-    const dataValue = option.dataset.value
-
-    if (!this.classList.contains('selected')) {
-      this.parentNode.querySelector('.custom-option.selected').classList.remove('selected')
-      this.classList.add('selected')
-      this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent
-      if (this.closest('.form__block-development')) {
-        createInputHidden(this, '.form__block-development', dataValue)
-      }
-
-      if (this.closest('.form__block-messenger')) {
-        createInputHidden(this, '.form__block-messenger', dataValue)
-      }
-      messenger.textContent = dataMassage
-      input.placeholder = dataPlaceholder
-      input.value = ''
-      input.setAttribute('type', 'text')
-
-      if (dataTel) {
-        input.setAttribute('type', 'tel')
-      }
-    }
+    checkedInput(option)
   })
 }
 
@@ -49,8 +25,47 @@ window.addEventListener('click', function (e) {
   }
 })
 
+for (const option of selectOptions) {
+  checkedInput(option)
+}
+
+checkedInput()
+
+function checkedInput(option) {
+  if (!option) {
+    return
+  }
+  const dataMassage = option.dataset.massage
+  const dataPlaceholder = option.dataset.inputPlaceholder
+  const dataTel = option.dataset.tel
+  const dataValue = option.dataset.value
+
+  if (!option.classList.contains('selected')) {
+    option.parentNode.querySelector('.custom-option.selected').classList.remove('selected')
+    option.classList.add('selected')
+    option.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = option.textContent
+    if (option.closest('.form__block-development')) {
+      createInputHidden(option, '.form__block-development', dataValue)
+    }
+
+    if (option.closest('.form__block-messenger')) {
+      createInputHidden(option, '.form__block-messenger', dataValue)
+    }
+    messenger.textContent = dataMassage
+    input.placeholder = dataPlaceholder
+    input.value = ''
+    input.setAttribute('type', 'text')
+
+    if (dataTel) {
+      input.setAttribute('type', 'tel')
+    }
+  }
+}
+
 function createInputHidden(option, wrapper, dataValue) {
-  option.closest(wrapper).querySelector('.input-hidden').remove()
+  if (option.closest(wrapper).querySelector('.input-hidden')) {
+    option.closest(wrapper).querySelector('.input-hidden').remove()
+  }
   const input = document.createElement('input')
   input.setAttribute('type', 'hidden')
   input.setAttribute('name', 'Разработку игры на')

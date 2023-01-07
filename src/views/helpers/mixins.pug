@@ -12,16 +12,16 @@ mixin icon(name,mod,data)
 mixin jpg(img,width,height,alt,placeholder)
 	picture
 		source(srcset=placeholder ,data-srcset=`${img}.webp`, type='image/webp')
-		img.lazy.img--poly( alt=alt, src=placeholder, data-src=`${img}.jpg`,width=width, height=height)
+		img.lazy.img--poly(decoding="async" alt=alt, src=placeholder, data-src=`${img}.jpg`,width=width, height=height)
 
 mixin png(img,width,height,alt,placeholder)
 	picture
 		source(srcset=placeholder ,data-srcset=`${img}.webp`, type='image/webp')
-		img.lazy.img--poly( alt=alt, src=placeholder, data-src=`${img}.png`,width=width, height=height)
+		img.lazy.img--poly(decoding="async" alt=alt, src=placeholder, data-src=`${img}.png`,width=width, height=height)
 
 
 //- Без lazy для слайдеров
 mixin jpgNoLazyLoad(img,width,height,alt,placeholder)
 	picture
 		source(srcset=`${img}.webp`, type='image/webp')
-		img.img--poly( alt=alt, src=`${img}.jpg`,width=width, height=height)
+		img.img--poly(decoding="async" alt=alt, src=`${img}.jpg`,width=width, height=height)
